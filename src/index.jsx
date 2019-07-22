@@ -1,9 +1,13 @@
-import Root from './containers/root';
+import App, {StoreProvider} from './app';
 
 function handleReady() {
-  const rootContainer = <Root />;
   const $app = document.querySelector('#app');
-  ReactDOM.render(rootContainer, $app);
+  ReactDOM.render(
+    <StoreProvider>
+      <App />
+    </StoreProvider>,
+    $app
+  );
 }
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
