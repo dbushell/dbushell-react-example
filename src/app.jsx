@@ -1,27 +1,31 @@
 /*! App */
 
-import React, {useState, useReducer} from 'react';
+import React, {useContext, useReducer} from 'react';
 import ReactDOM from 'react-dom';
 
-const Store = React.createContext();
 const initialState = {title: 'Example', count: 0};
 
-const reducer = (state, action) => {
+const reducer = (state, action = {}) => {
   switch (action.type) {
     case 'increment':
       return {...state, count: state.count + 1};
     case 'decrement':
       return {...state, count: state.count - 1};
-    case 'reset': {
+    case 'reset':
       return {...initialState};
-    }
     default:
-      throw new Error();
+      return state;
   }
 };
 
+const Store = React.createContext();
+const Dispatch = React.createContext();
+
+const useStore = () => useContext(Store);
+const useDispatch = () => useContext(Dispatch);
+
 const useCounter = () => {
-  const {dispatch} = React.useContext(Store);
+  const dispatch = useDispatch();
   const increment = () => dispatch({type: 'increment'});
   const decrement = () => dispatch({type: 'decrement'});
   const reset = () => dispatch({type: 'reset'});
@@ -29,9 +33,12 @@ const useCounter = () => {
 };
 
 const StoreProvider = ({children}) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
-  const value = {state, dispatch};
-  return <Store.Provider value={value}>{children}</Store.Provider>;
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <Dispatch.Provider value={dispatch}>
+      <Store.Provider value={state}>{children}</Store.Provider>
+    </Dispatch.Provider>
+  );
 };
 
 const Count = props => {
@@ -54,7 +61,7 @@ const Actions = () => {
 };
 
 const App = props => {
-  const {state} = React.useContext(Store);
+  const state = useStore();
   const heading = <h1>{state.title}</h1>;
   return (
     <React.Fragment>
