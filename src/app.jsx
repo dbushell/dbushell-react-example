@@ -20,13 +20,21 @@ const reducer = (state, action) => {
   }
 };
 
-const StoreProvider = props => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
-  const value = {state, dispatch};
-  return <Store.Provider value={value}>{props.children}</Store.Provider>;
+const useCounter = () => {
+  const {dispatch} = React.useContext(Store);
+  const increment = () => dispatch({type: 'increment'});
+  const decrement = () => dispatch({type: 'decrement'});
+  const reset = () => dispatch({type: 'reset'});
+  return {increment, decrement, reset};
 };
 
-const Counter = props => {
+const StoreProvider = ({children}) => {
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const value = {state, dispatch};
+  return <Store.Provider value={value}>{children}</Store.Provider>;
+};
+
+const Count = props => {
   return (
     <h3>
       Count: <code>{props.count}</code>
@@ -35,25 +43,23 @@ const Counter = props => {
 };
 
 const Actions = () => {
-  const {dispatch} = React.useContext(Store);
-  const handleIncrement = () => dispatch({type: 'increment'});
-  const handleDecrement = () => dispatch({type: 'decrement'});
-  const handleReset = () => dispatch({type: 'reset'});
+  const {increment, decrement, reset} = useCounter();
   return (
     <div>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
-      <button onClick={handleReset}>Reset</button>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
 
 const App = props => {
   const {state} = React.useContext(Store);
+  const heading = <h1>{state.title}</h1>;
   return (
     <React.Fragment>
-      <h1>{state.title}</h1>
-      <Counter count={state.count} />
+      {heading}
+      <Count count={state.count} />
       <Actions />
     </React.Fragment>
   );
