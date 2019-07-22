@@ -4,6 +4,10 @@
   "private": true,
   "description": "",
   "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/dbushell/dbushell-react-example.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack:dev": "npx webpack --mode development --debug",

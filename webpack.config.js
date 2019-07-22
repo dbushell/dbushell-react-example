@@ -24,8 +24,8 @@ module.exports = (env, argv) => ({
                 '@babel/preset-env',
                 {
                   debug: argv.mode === 'development',
-                  corejs: 3,
                   useBuiltIns: 'usage',
+                  corejs: 3,
                   targets: {
                     browsers: ['Android >= 4', 'last 3 versions', 'ie 11']
                   }
