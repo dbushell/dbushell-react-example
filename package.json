@@ -1,0 +1,42 @@
+{
+  "name": "dbushell-react-example",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Bushell <david@dbushell.com>",
+  "license": "MIT",
+  "browserslist": [
+    "Android >= 4",
+    "last 3 versions",
+    "ie 11"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-react"
+      ],
+      [
+        "@babel/preset-env",
+        {
+          "corejs": 3,
+          "useBuiltIns": "usage"
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
