@@ -3,31 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack:dev": "npx webpack --mode development --debug",
+    "webpack:prod": "npx webpack --mode production",
+    "webpack": "npm run webpack:prod && npm run webpack:dev"
   },
   "author": "David Bushell <david@dbushell.com>",
   "license": "MIT",
-  "browserslist": [
-    "Android >= 4",
-    "last 3 versions",
-    "ie 11"
-  ],
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-react"
-      ],
-      [
-        "@babel/preset-env",
-        {
-          "corejs": 3,
-          "useBuiltIns": "usage"
-        }
-      ]
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
