@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = (env, argv) => ({
-  entry: path.resolve(__dirname, 'src/containers/index.jsx'),
+  entry: path.resolve(__dirname, 'src/index.jsx'),
   output: {
     path: path.resolve(__dirname, 'public/assets/js/'),
     filename: argv.mode === 'development' ? 'app.js' : 'app.min.js'

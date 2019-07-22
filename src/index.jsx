@@ -1,4 +1,4 @@
-import Root from './root';
+import Root from './containers/root';
 
 function handleReady() {
   const rootContainer = <Root />;
