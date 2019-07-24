@@ -1,6 +1,6 @@
 /*! App */
 
-import React, {useContext, useReducer} from 'react';
+import React, {useContext, useMemo, useReducer} from 'react';
 import ReactDOM from 'react-dom';
 
 const initialState = {title: 'Example', count: 0};
@@ -34,6 +34,8 @@ const useCounter = () => {
 
 const StoreProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  // const dispatchValue = useMemo(() => dispatch, [dispatch]);
+  // const stateValue = useMemo(() => state, [state]);
   return (
     <Dispatch.Provider value={dispatch}>
       <Store.Provider value={state}>{children}</Store.Provider>
@@ -41,15 +43,22 @@ const StoreProvider = ({children}) => {
   );
 };
 
-const Count = props => {
-  return (
-    <h3>
-      Count: <code>{props.count}</code>
-    </h3>
-  );
-};
+const CountTitle = React.memo(({title}) => {
+  return <h1>{title}</h1>;
+});
 
-const Actions = () => {
+const Count = React.memo(props => {
+  return (
+    <div>
+      <CountTitle title={props.title} />
+      <h3>
+        Count: <code>{props.count}</code>
+      </h3>
+    </div>
+  );
+});
+
+const Actions = React.memo(() => {
   const {increment, decrement, reset} = useCounter();
   return (
     <div>
@@ -58,15 +67,13 @@ const Actions = () => {
       <button onClick={reset}>Reset</button>
     </div>
   );
-};
+});
 
 const App = props => {
   const state = useStore();
-  const heading = <h1>{state.title}</h1>;
   return (
     <React.Fragment>
-      {heading}
-      <Count count={state.count} />
+      <Count title={state.title} count={state.count} />
       <Actions />
     </React.Fragment>
   );
