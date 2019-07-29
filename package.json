@@ -16,7 +16,7 @@
   },
   "author": "David Bushell <david@dbushell.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
@@ -24,6 +24,8 @@
     "core-js": "^3.1.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   }

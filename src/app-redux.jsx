@@ -1,32 +1,27 @@
-/*! App */
+/*! Redux App */
 
 import React, {useContext, useMemo, useReducer} from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux';
+import {Provider, useDispatch, useSelector} from 'react-redux';
 
 import {Count, CountTitle} from './app-common';
 import reducer, {defaultState} from './reducer';
 
-const Store = React.createContext();
-const Dispatch = React.createContext();
+const initialState = {...defaultState, title: 'Redux'};
 
-const useStore = () => useContext(Store);
-const useDispatch = () => useContext(Dispatch);
+const store = createStore(reducer, initialState);
 
 const useCounter = () => {
   const dispatch = useDispatch();
   const increment = () => dispatch({type: 'increment'});
   const decrement = () => dispatch({type: 'decrement'});
-  const reset = () => dispatch({type: 'reset'});
+  const reset = () => dispatch({type: 'reset', newState: initialState});
   return {increment, decrement, reset};
 };
 
 const StoreProvider = ({children}) => {
-  const [state, dispatch] = useReducer(reducer, defaultState);
-  return (
-    <Dispatch.Provider value={dispatch}>
-      <Store.Provider value={state}>{children}</Store.Provider>
-    </Dispatch.Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 };
 
 const Actions = React.memo(() => {
@@ -41,15 +36,17 @@ const Actions = React.memo(() => {
 });
 
 const App = props => {
-  const state = useStore();
+  const title = useSelector(state => state.title);
+  const count = useSelector(state => state.count);
   return (
     <React.Fragment>
-      <Count title={state.title} count={state.count} />
+      <Count title={title} count={count} />
       <Actions />
     </React.Fragment>
   );
 };
 
-export {Count, CountTitle}
-export {StoreProvider};
-export default App;
+const ReduxApp = App;
+
+export {StoreProvider as ReduxStoreProvider};
+export default ReduxApp;

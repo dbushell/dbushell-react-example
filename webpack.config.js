@@ -8,7 +8,9 @@ module.exports = (env, argv) => ({
   },
   externals: {
     react: 'React',
-    'react-dom': 'ReactDOM'
+    'react-dom': 'ReactDOM',
+    redux: 'Redux',
+    'react-redux': 'ReactRedux'
   },
   module: {
     rules: [
@@ -27,7 +29,7 @@ module.exports = (env, argv) => ({
                   useBuiltIns: 'usage',
                   corejs: 3,
                   targets: {
-                    browsers: ['Android >= 4', 'last 3 versions', 'ie 11']
+                    browsers: ['> 1%']
                   }
                 }
               ]
