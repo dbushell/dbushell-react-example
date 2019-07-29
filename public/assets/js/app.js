@@ -1111,7 +1111,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ \"./src/app.jsx\");\n/* harmony import */ var _app_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-redux */ \"./src/app-redux.jsx\");\n\n\n\nfunction handleReady() {\n  var $app = document.querySelector('#app');\n  var $redux = document.querySelector('#app-redux');\n  ReactDOM.render(React.createElement(_app__WEBPACK_IMPORTED_MODULE_0__[\"StoreProvider\"], null, React.createElement(_app__WEBPACK_IMPORTED_MODULE_0__[\"default\"], null)), $app);\n  ReactDOM.render(React.createElement(_app_redux__WEBPACK_IMPORTED_MODULE_1__[\"ReduxStoreProvider\"], null, React.createElement(_app_redux__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null)), $redux);\n}\n\nif (/complete|interactive|loaded/.test(document.readyState)) {\n  handleReady();\n} else {\n  document.addEventListener('DOMContentLoaded', handleReady);\n}\n\n//# sourceURL=webpack:///./src/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app */ \"./src/app.jsx\");\n/* harmony import */ var _app_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-redux */ \"./src/app-redux.jsx\");\n\n\n\n\nvar AppContainer = function AppContainer() {\n  return React.createElement(_app__WEBPACK_IMPORTED_MODULE_1__[\"StoreProvider\"], null, React.createElement(_app__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\nvar ReduxAppContainer = function ReduxAppContainer() {\n  return React.createElement(_app_redux__WEBPACK_IMPORTED_MODULE_2__[\"ReduxStoreProvider\"], null, React.createElement(_app_redux__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n};\n\nvar RouterApp = function RouterApp() {\n  return React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__[\"BrowserRouter\"], null, React.createElement(React.Fragment, null, React.createElement(\"ul\", null, React.createElement(\"li\", null, React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__[\"Link\"], {\n    to: \"/react\"\n  }, \"React\")), React.createElement(\"li\", null, React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__[\"Link\"], {\n    to: \"/redux\"\n  }, \"Redux\"))), React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__[\"Route\"], {\n    path: \"/react\",\n    component: AppContainer\n  }), React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__[\"Route\"], {\n    path: \"/redux\",\n    component: ReduxAppContainer\n  })));\n};\n\nfunction handleReady() {\n  var $app = document.querySelector('#app');\n  ReactDOM.render(React.createElement(RouterApp, null), $app);\n}\n\nif (/complete|interactive|loaded/.test(document.readyState)) {\n  handleReady();\n} else {\n  document.addEventListener('DOMContentLoaded', handleReady);\n}\n\n//# sourceURL=webpack:///./src/index.jsx?");
 
 /***/ }),
 
@@ -1157,6 +1157,17 @@ eval("module.exports = ReactDOM;\n\n//# sourceURL=webpack:///external_%22ReactDO
 /***/ (function(module, exports) {
 
 eval("module.exports = ReactRedux;\n\n//# sourceURL=webpack:///external_%22ReactRedux%22?");
+
+/***/ }),
+
+/***/ "react-router-dom":
+/*!*********************************!*\
+  !*** external "ReactRouterDOM" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = ReactRouterDOM;\n\n//# sourceURL=webpack:///external_%22ReactRouterDOM%22?");
 
 /***/ }),
 

@@ -10,7 +10,9 @@ module.exports = (env, argv) => ({
     react: 'React',
     'react-dom': 'ReactDOM',
     redux: 'Redux',
-    'react-redux': 'ReactRedux'
+    'react-redux': 'ReactRedux',
+    'react-router': 'ReactRouter',
+    'react-router-dom': 'ReactRouterDOM'
   },
   module: {
     rules: [
