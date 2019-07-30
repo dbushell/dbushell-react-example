@@ -1,4 +1,4 @@
-/*! App */
+/*! React App */
 
 import React, {useContext, useMemo, useReducer} from 'react';
 import ReactDOM from 'react-dom';
@@ -50,6 +50,7 @@ const App = props => {
   );
 };
 
-export {Count, CountTitle}
-export {StoreProvider};
-export default App;
+const ReactApp = App;
+
+export {StoreProvider as ReactStoreProvider};
+export default ReactApp;

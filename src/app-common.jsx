@@ -1,5 +1,7 @@
 /*! Common components */
 
+import React from 'react';
+
 export const CountTitle = React.memo(({title}) => {
   return <h1>{title}</h1>;
 });
