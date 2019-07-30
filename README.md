@@ -1,6 +1,6 @@
 # React Example
 
-A React starter project using Babel and Webpack.
+A React starter project using Babel and Webpack. Includes React Router and server-side rendering.
 
 ## NPM scripts
 
@@ -20,6 +20,12 @@ Compile both modes:
 
 ```sh
 $ npm run webpack
+```
+
+Rewrite server-side renders for routes to the public directory:
+
+```sh
+$ npm run render
 ```
 
 * * *

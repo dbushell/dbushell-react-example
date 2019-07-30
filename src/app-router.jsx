@@ -26,14 +26,14 @@ const App = () => {
     <React.Fragment>
       <ul>
         <li>
-          <Link to="/react">React</Link>
+          <Link to="/react/">React</Link>
         </li>
         <li>
-          <Link to="/redux">Redux</Link>
+          <Link to="/redux/">Redux</Link>
         </li>
       </ul>
-      <Route path="/react" component={ReactAppContainer} />
-      <Route path="/redux" component={ReduxAppContainer} />
+      <Route path="/react/" component={ReactAppContainer} />
+      <Route path="/redux/" component={ReduxAppContainer} />
     </React.Fragment>
   );
 };
@@ -46,4 +46,4 @@ const RouterApp = () => {
   );
 };
 
-export {ReactAppContainer, ReduxAppContainer, RouterApp};
+export {ReactAppContainer, ReduxAppContainer, RouterApp, App};
