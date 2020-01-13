@@ -30,4 +30,4 @@ $ npm run render
 
 * * *
 
-MIT licensed | Copyright © 2019 [David Bushell](http://dbushell.com) | [@dbushell](http://twitter.com/dbushell)
+MIT licensed | Copyright © 2020 [David Bushell](http://dbushell.com) | [@dbushell](http://twitter.com/dbushell)
