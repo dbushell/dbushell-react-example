@@ -30,6 +30,8 @@ const template = `\
   <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
   <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.js"></script>
   <script src="/assets/js/app.js"></script>
+  <br>
+  <p>Copyright © 2020 <a href="https://dbushell.com/">David Bushell</a> | <a href="https://twitter.com/dbushell">@dbushell</a></p>
 </body>
 </html>
 `;

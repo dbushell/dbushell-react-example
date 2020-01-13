@@ -13,7 +13,8 @@
     "webpack:dev": "npx webpack --mode development --debug",
     "webpack:prod": "npx webpack --mode production",
     "webpack": "npm run webpack:prod && npm run webpack:dev",
-    "render": "npx babel-node src/render.jsx"
+    "render": "npx babel-node src/render.jsx",
+    "build": "npm run webpack:dev && npm run render"
   },
   "author": "David Bushell <david@dbushell.com>",
   "license": "MIT",
