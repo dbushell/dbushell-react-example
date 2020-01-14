@@ -1,3 +1,4 @@
 .netlify
 public/*
 !public/admin
+!public/data
