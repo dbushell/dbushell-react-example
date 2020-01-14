@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import marked from 'marked';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
@@ -9,17 +10,24 @@ const dir = path.resolve(__dirname, '../public');
 
 const routes = ['/', '/react/', '/redux/'];
 
+let data = fs.readFileSync(path.join(dir, 'data/pages/global.json'));
+data = JSON.parse(data);
+
+marked.setOptions({
+  smartypants: true
+});
+
 /*
 <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
 */
 const template = `\
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>React Example</title>
+<title>${data.title}</title>
 </head>
 <body>
   <div id="app">{{app}}</div>
@@ -31,7 +39,7 @@ const template = `\
   <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.js"></script>
   <script src="/assets/js/app.js"></script>
   <br>
-  <p>Copyright © 2020 <a href="https://dbushell.com/">David Bushell</a> | <a href="https://twitter.com/dbushell">@dbushell</a></p>
+  ${marked(data.copyright)}
 </body>
 </html>
 `;
