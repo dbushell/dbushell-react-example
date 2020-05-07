@@ -2,6 +2,12 @@
 
 A React starter project using Babel and Webpack. Includes React Router and server-side rendering.
 
+[Demo on Netlify](https://dbushell-react-example.netlify.app):
+
+```
+https://dbushell-react-example.netlify.app
+```
+
 ## NPM scripts
 
 Compile `app.min.js` in debug/development mode:
