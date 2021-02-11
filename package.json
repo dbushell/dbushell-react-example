@@ -9,12 +9,12 @@
     "url": "git+https://github.com/dbushell/dbushell-react-example.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack:dev": "npx webpack --mode development --debug",
+    "webpack:dev": "npx webpack --mode development",
     "webpack:prod": "npx webpack --mode production",
     "webpack": "npm run webpack:prod && npm run webpack:dev",
     "render": "npx babel-node src/render.jsx",
-    "build": "npm run webpack:dev && npm run render"
+    "build": "npm run webpack:dev && npm run render",
+    "serve": "http-server ./public/ -a dbushell-react-example.localhost"
   },
   "author": "David Bushell <david@dbushell.com>",
   "license": "MIT",
@@ -32,19 +32,19 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
-    "core-js": "^3.6.5",
-    "marked": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.8.3",
+    "marked": "^2.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
   }
 }

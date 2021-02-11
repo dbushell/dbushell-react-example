@@ -1,4 +1,12 @@
+/*
 .netlify
+!.gitattributes
+!.gitignore
+!package.json
+!README.md
+!src
+!webpack.config.js
+!netlify.toml
+!public
 public/*
-!public/admin
 !public/data
