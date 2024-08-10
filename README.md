@@ -2,12 +2,6 @@
 
 A React starter project using Babel and Webpack. Includes React Router and server-side rendering.
 
-[Demo on Netlify](https://dbushell-react-example.netlify.app):
-
-```
-https://dbushell-react-example.netlify.app
-```
-
 ## NPM scripts
 
 Compile `app.min.js` in debug/development mode:
@@ -36,6 +30,4 @@ $ npm run render
 
 * * *
 
-## Credits / License
-
-MIT licensed | Copyright © 2020 [David Bushell](https://dbushell.com) | [@dbushell](https://twitter.com/dbushell)
+[MIT License](/LICENSE) | Copyright © 2020 [David Bushell](https://dbushell.com)
