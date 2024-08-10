@@ -1,6 +1,6 @@
 {
   "name": "dbushell-react-example",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "",
   "main": "",
@@ -16,7 +16,7 @@
     "build": "npm run webpack:dev && npm run render",
     "serve": "http-server ./public/ -a dbushell-react-example.localhost"
   },
-  "author": "David Bushell <david@dbushell.com>",
+  "author": "David Bushell",
   "license": "MIT",
   "babel": {
     "presets": [
